@@ -1,0 +1,135 @@
+We will be working on the previously written code to scrape more data
+
+
+goal: Scrape more data about all the exoplanets
+--------------------------------------------------------------
+Recap: In the last class , we scraped exoplanet's data from NASA 's website
+We used the tools Selenium,BeautifulSoup
+-------------------------------------------------------------------
+Today's class:
+We will scrape more data from the same website
+
+We got some data like distance from earth,planet,size etc.
+But today ,we will scrape more data,so that when we perform analysis later,we can better 
+predict the planets.
+
+--------------------------------------------------------------------
+Open the url
+
+https://exoplanets.nasa.gov/exoplanet-catalog/
+
+
+If we look closely,we can see that the name of these exo-planets is a hyperlink
+
+let's click on the link and find ..what kind of data we find
+let us say we want to scrape this data as well
+
+--->We will add new column("hyperlink") in our header 
+
+-->We also need to add this into the temp_list variable list,beforewe append into planet_data
+
+
+-->lets investigate the href url in these hyperlinks
+-->inspect--and see that these links dont have https before them
+
+so we will have to add them.
+
+Here, first we are creating a variable
+hyperlink_li_tag and then we are
+using this variable to find all the
+anchor tag with href, take the first
+anchor tag (since we know there’s
+only one anchor tag in all li tags) and
+then we are taking out the href from it.
+
+
+Now that we have the links in
+planet_data
+
+, we will create a new function
+that will take these hyperlinks one by
+one, get the HTML and then we will
+scrape the data.
+Earlier, we used selenium because
+we wanted to click a button on the
+page (next button) but this time, we
+do not want to interact with the
+browser, therefore we can do this
+without selenium.
+
+
+
+to move the variables
+headers and planet_data to the
+global scope, i.e, below
+time.sleep(10) line.
+This is because we now would want
+to access these variables in multiple
+functions.
+
+Great! Now, let’s add the new
+headers, that is, the new data that is
+available on the new page we just
+discovered.
+
+Great, now let’s create a new function
+and call that function. We will call the
+function in loop and pass the
+hyperlink we saved with the earlier
+function into this function.
+Also, let’s comment out the CSV
+
+
+Okay, now earlier, we created a soup
+object where we passed the
+browser’s page source and parsed it
+as html
+
+ we will import requests module
+ we are first getting the page,
+and then we are parsing the contents
+of the page as HTML.
+
+
+ create a new list
+new_planet_data to save data from
+these new pages, and ask them to
+scrape the data like before.
+
+
+
+ we have 2 lists,
+planet_data and new_planet_data.
+What we want to do is, we want to
+merge this data. Adding 2 lists
+creates 1 final list with elements from
+both the lists in the same order.
+
+
+
+Finally, we will create a csv with our
+headers and final_planet_data.
+
+
+Let’s run this code to see if it works
+fine and generates the desired result.
+
+
+Although it is the running version of
+the code, scraping can take a lot of
+time sometimes (like for scraping
+4,277 pages in this case) therefore
+we’ll provide you the final csv.
+
+
+If you want you can also try running
+your code after the class to check the
+output
+
+
+So, in this project class we revisited
+the concepts from the previous class
+and you did the majority of the
+scraping yourself! 
+
+
